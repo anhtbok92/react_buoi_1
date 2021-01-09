@@ -202,7 +202,58 @@
 #### c. Components
 
 - Components giúp phân chia các UI (giao diện người dùng) thành các phân nhỏ để dễ dàng quản lý và tái sử dụng.
+- Dựa vào props mà component sẽ có những hiển thị khác nhau và có thể tái sử dụng
+- Khởi tạo component
+  + Trong thư mục gốc của dự án tạo folder components
+    ```angular2svg
+      public/
+      node_modules/
+      src/
+      -----components/
+      ---------------Components sẽ viết ở trong thư mục này
+      -----App.js
+      -----index.js
+      ---- vv....
+      packages.json
+      packages-lock.json
+    ```
+    
+- Functional Component
+  + Định nghĩa component kiểu function
+  ```angular2svg
+    //Import react vào trong dự án
+    import React from "react";
 
+    const Welcome = function(props) {
+      return (
+        <div>
+          <h1>Welcome ! I am a functional component </h1>
+        </div>
+      )
+    }
+    export default Welcome;
+  ```
+  
+  + Function component thì sẽ không có các khái niệm như state, life cycles, events,...
+  + Trong phiên bản gần đây thì React cũng đã hỗ trợ thêm React Hooks cho phép bạn làm việc với state, lifecycles dễ dàng hơn trong funcitonal components.
+  
+  
+- Class component
+  + khi viết một class component bạn sẽ sử dụng được hầu hết các chức năng của component như state, props, lifecycle,..
+  + Ví dụ
+  ```angular2svg
+    import React, { Component } from "react";
+    class Welcome extends Component {
+        render() {
+          return (
+            <div>
+              <h1>Welcome ! I am a class component </h1>
+            </div>
+          );
+        }
+    }
+export default Welcome;
+  ```
 #### d. Props và state
 
 #### e. React lifecycle
